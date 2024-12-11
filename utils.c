@@ -200,36 +200,6 @@ void	printMenu()
 	printf("\nPlease choose one of the following options: \nN/n - New Game\nR/r - Move Right\nL/l - Move Left\nU/u - Move Up\nD/d - Move Down\nE/e - Exit\n");
 }
 
-char	getValidChar()
-{
-	char input;
-	printMenu();
-	while(1)
-	{
-		scanf(" %c", &input);
-		if(getchar() != '\n')
-		{
-			printf("Please enter only 1 char\n");
-			while(getchar() != '\n');
-			continue;
-			
-		}
-			return toupper(input);
-	}
-}
-
-/*
-void	turnBackToPos(int* mat, int size)	//להוריד אם עובד			//turn back the matrix to positive numbers
-{
-	int i;
-	for(i = 0; i < size*size; i++)
-	{
-		if(*(mat+i) < 0)
-			*(mat+i) *= -1;
-	}
-
-}
-*/
 
 void	finishMove(int* mat, int size,int* currScore, int* bestScore, int counterCheck)
 {

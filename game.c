@@ -18,7 +18,9 @@ void	playGame(int* mat, int size, int scoreToWin)
 	printBoard(mat, size);
 	do 
 	{
-		input = getValidChar();
+		printMenu();
+		scanf(" %c", &input);
+		input = toupper(input);
 		if (input == 'N') 
 		{
 			startGame(mat, size, &currScore, &bestScore);      // start the game 

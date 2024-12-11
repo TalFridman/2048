@@ -3,12 +3,10 @@
 
 void	fillRandomNumber(int* mat, int size);
 void	swap(int* x, int* y);
-int		ifStarted(int* mat, int size);
-char	getValidChar();
+int	ifStarted(int* mat, int size);
 void	printMenu();
-//void	turnBackToPos(int* mat, int size);
 void	finishMove(int* mat, int size,int* currScore, int* bestScore, int counterCheck);
-int		canMove(const int* mat, int size);
+int	canMove(const int* mat, int size);
 void	resetMat(int* mat, int size);
 int	maxValue(const int* mat, int size);
 
