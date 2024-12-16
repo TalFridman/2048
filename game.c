@@ -23,7 +23,7 @@ void	playGame(int* mat, int size, int scoreToWin)
 		input = toupper(input);
 		if (input == 'N') 
 		{
-			startGame(mat, size, &currScore, &bestScore);      // start the game 
+			startGame(mat, size, &currScore, &bestScore);      			// start the game 
 		}
 		else if (input == 'R')
 		{
@@ -105,22 +105,22 @@ void	startGame(int* mat,int size, int* currScore, int* bestScore)
 		*bestScore = *currScore;
 	*currScore = 0;
 	
-	printf("--------- STARTING A GAME ---------\n");
+	printf("----------- STARTING A GAME ------------\n");
 	
 	if(size == 2)
 	{
-		printf("         Score for a win 32\n");
+	printf("           Highest tile for a win 32\n");
 		
 	}
 	else if(size == 3)
 	{
-		printf("         Score for a win 16\n");
+		printf("         Highest tile for a win 16\n");
 	}
 	else if(size == 4)
 	{
-		printf("         Score for a win 2048\n");
+		printf("         Highest tile for a win 2048\n");
 	}
-	printf("-----------------------------------\n\n");
+	printf("----------------------------------------\n\n");
 	printf("Score %d  Best %d\n", *currScore, *bestScore);
 	fillRandomNumber(mat, size);
 	fillRandomNumber(mat, size);
@@ -138,7 +138,7 @@ void	gameOver(int* mat, int size, int scoreToWin)
 	}
 	else if(!canMove(mat, size))
 	{
-		printf("Game Over your score is %d\n", maxCell);
+		printf("Game Over your highest tile is %d\n", maxCell);
 		resetMat(mat, size);
 	}	
 }

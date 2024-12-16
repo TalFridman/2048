@@ -26,19 +26,22 @@ void	swap(int* x, int* y)
 
 }
 
-void	shiftUp(int* mat, int size, int* counterCheck)
+void	shiftUp(int* mat, int size, int* counterCheck)			
 {
-	int i;
-	for (i = 0; i < size - 1; i++)
+	int i, j = 0;
+	for (i = 1; i <= size - 1; i++)
 	{
-		if (*(mat + i * size) == 0)
+		if (*(mat + j * size) == 0)
 		{
-			if(*(mat + i * size + size) != 0)
+			if(*(mat + i * size) != 0)
 			{
-				swap((mat + i * size), (mat + (i * size) + size));
+				swap((mat + i * size),(mat + j * size));
 				(*counterCheck)++;
-				i = 0;			//added
+				j++;			
 			}
+		}else
+		{
+			j++;
 		}
 	}
 
@@ -64,19 +67,22 @@ void	mergeUp(int* mat, int size, int* currScore,int* counterCheck)
 	
 }
 
-void	shiftDown(int* mat, int size, int* counterCheck)
+void	shiftDown(int* mat, int size, int* counterCheck)			
 {
-	int i;
-	for (i = size - 1; i > 0; i--)
+	int i, j = size - 1;
+	for (i = size - 2; i >= 0; i--)
 	{
-		if (*(mat + i * size) == 0)
+		if (*(mat + j * size) == 0)
 		{
-			if(*(mat + i * size - size) != 0)
+			if(*(mat + i * size) != 0)
 			{
-				swap((mat + i * size), (mat + (i * size) - size));
+				swap((mat + i * size), (mat + j * size));
 				(*counterCheck)++;
-				i = size - 1;		//added
+				j--;		
 			}
+		}else
+		{
+			j--;
 		}
 	}
 
@@ -104,20 +110,23 @@ void	mergeDown(int* mat, int size, int* currScore, int* counterCheck)
 }
 
 
-void	shiftRight(int* mat, int size, int* counterCheck)
+void	shiftRight(int* mat, int size, int* counterCheck)	
 {
-	int i;
-	for (i = size - 1; i > 0; i--)
+	int i, j = size - 1;
+	for (i = size - 2; i >= 0; i--)
 	{
 		
-		if (*(mat + i) == 0)
+		if (*(mat + j) == 0)
 		{
-			if(*(mat + i - 1) != 0)
+			if(*(mat + i) != 0)
 			{
-				swap((mat + i), (mat + i - 1));
+				swap((mat + i), (mat + j));
 				(*counterCheck)++;
-				i = size - 1;			//added
+				j--;			
 			}
+		}else
+		{
+			j--;
 		}
 	}
 
@@ -145,19 +154,22 @@ void	mergeRight(int* mat, int size, int* currScore, int* counterCheck)
 }
 
 
-void	shiftLeft(int* mat, int size, int* counterCheck)	//fixed
+void	shiftLeft(int* mat, int size, int* counterCheck)	
 {
-	int i;
-	for (i = 0; i < size - 1; i++)
+	int i, j = 0;
+	for (i = 1; i <= size - 1; i++)
 	{
-		if (*(mat + i) == 0)
+		if (*(mat + j) == 0)
 		{
-			if(*(mat + i + 1) != 0)
+			if(*(mat + i) != 0)
 			{
-				swap((mat + i), (mat + i + 1));
+				swap((mat + i), (mat + j));
 				(*counterCheck)++;
-				i = 0;		//added
+				j++;		
 			}
+		}else
+		{
+			j++;
 		}
 	}
 

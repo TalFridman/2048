@@ -14,5 +14,5 @@ utils.o: utils.c utils.h game.h player.h
 
 
 clean:
-	rm -f $(CC) $(OBJS)
+	rm -f $(OBJS) $(EXEC)
 
